@@ -30,25 +30,17 @@ public class LionTests {
 
 
     @Test
-    public void testLionGetKittens() {
-        try {
-            Lion lion = new Lion("Самка", feline);
-            Mockito.when(feline.getKittens()).thenReturn(3);
-            Assert.assertEquals(3, lion.getKittens());
-        } catch (Exception e) {
-            System.out.println("Error");
-        }
+    public void testLionGetKittens() throws Exception {
+        Lion lion = new Lion("Самка", feline);
+        Mockito.when(feline.getKittens()).thenReturn(3);
+        Assert.assertEquals(3, lion.getKittens());
     }
 
     @Test
-    public void testLionFood() {
+    public void testLionFood() throws Exception {
         List<String> eat = List.of("Животные", "Птицы", "Рыба");
-        try {
-            Lion lion = new Lion("Самка", feline);
-            Mockito.when(feline.getFood("Хищник")).thenReturn(eat);
-            Assert.assertEquals(eat, lion.getFood());
-        } catch (Exception e) {
-            System.out.println("Error");
-        }
+        Lion lion = new Lion("Самка", feline);
+        Mockito.when(feline.getFood("Хищник")).thenReturn(eat);
+        Assert.assertEquals(eat, lion.getFood());
     }
 }

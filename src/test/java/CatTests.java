@@ -9,7 +9,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
-
 @RunWith(MockitoJUnitRunner.class)
 public class CatTests {
 
@@ -23,15 +22,11 @@ public class CatTests {
     }
 
     @Test
-    public void testCatFood() {
+    public void testCatFood() throws Exception {
         List<String> eat = List.of("Животные", "Птицы", "Рыба");
         Cat cat = new Cat(feline);
-        try {
-            Mockito.when(feline.eatMeat()).thenReturn(eat);
-            Assert.assertEquals(eat, cat.getFood());
-        } catch (Exception e) {
-            System.out.println("Error");
-        }
+        Mockito.when(feline.eatMeat()).thenReturn(eat);
+        Assert.assertEquals(eat, cat.getFood());
     }
 
 }

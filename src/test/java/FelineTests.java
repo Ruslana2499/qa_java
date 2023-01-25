@@ -7,14 +7,10 @@ import java.util.List;
 public class FelineTests {
 
     @Test
-    public void testEatMeat() {
+    public void testEatMeat() throws Exception {
         List<String> eat = List.of("Животные", "Птицы", "Рыба");
-        try {
-            Feline feline = new Feline();
-            Assert.assertEquals(eat, feline.eatMeat());
-        } catch (Exception e) {
-            System.out.println("Error");
-        }
+        Feline feline = new Feline();
+        Assert.assertEquals(eat, feline.eatMeat());
     }
 
     @Test

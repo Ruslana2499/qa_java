@@ -6,8 +6,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
-
-
 @RunWith(Parameterized.class)
 public class ManeLionTests {
     private final String sex;
@@ -28,13 +26,9 @@ public class ManeLionTests {
 
 
     @Test
-    public void testLionDoesHaveMane() {
+    public void testLionDoesHaveMane() throws Exception {
         Feline feline = new Feline();
-        try {
-            Lion lion = new Lion(sex, feline);
-            Assert.assertEquals(expectedHasMane, lion.doesHaveMane());
-        } catch (Exception e) {
-            System.out.println("Error");
-        }
+        Lion lion = new Lion(sex, feline);
+        Assert.assertEquals(expectedHasMane, lion.doesHaveMane());
     }
 }
