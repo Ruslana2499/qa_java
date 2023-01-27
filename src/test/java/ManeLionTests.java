@@ -16,7 +16,7 @@ public class ManeLionTests {
         this.expectedHasMane = expectedHasMane;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные: {0} {1}")
     public static Iterable<Object[]> getLion() {
         return Arrays.asList(new Object[][]{
                 {"Самец", true},
